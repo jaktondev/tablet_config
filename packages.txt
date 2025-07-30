@@ -1,0 +1,2 @@
+yay -Syu sway wayland xwayland thunar iio-sensor-proxy libinput firefox kitty python elixir wvkbd swaybg waybar thunar-archive-plugin file-roller ly imv mpv helix 
+
