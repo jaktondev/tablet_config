@@ -1,3 +1,7 @@
+input * {
+  xkb_layout "jp"
+}
+
 set $mod Mod4
 
 font pango:GohuFont 14 Nerd Font Mono 10
@@ -12,14 +16,14 @@ bindsym XF86MonBrightnessUp exec brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 bindsym Print exec flameshot gui
 
-
+xwayland enable
 
 floating_modifier $mod
 workspace_layout tabbed
 title_align center
 for_window [all] title_window_icon on
 
-bindsym $mod+d exec --no-startup-id wodi --show drun
+bindsym $mod+d exec --no-startup-id wofi --show drun
 bindsym $mod+q kill
 bindgesture hold:2 exec --no-startup-id wofi --show drun
 bindgesture hold:4 kill
@@ -33,8 +37,8 @@ gaps outer 1px
 default_border pixel 3
 
 #                #Border        #BCK           #FG          #??      #WBorder
-client.focused   #e39aac        #634b7d        #f0f6e8      #28282e  #2ba9b4
-client.unfocused #634b7d        #634b7d        #777777      #999999  #2ba9b4
+client.focused   #ffffd1        #150413        #ffffd1      #28282e  #ffffd1
+client.unfocused #150413        #150413        #635c6d      #999999  #150413
 client.urgent    #ff0000        #ffffff        #222222      #ffffff  #ff0000
 
 
@@ -77,4 +81,4 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 exec flameshot
 exec waybar -c ~/.config/waybar/config.json -s ~/.config/waybar/styles.css
-exec swaybg -i ~/Pictures/BCKK.png
+exec "swaybg -c #635c6d"
