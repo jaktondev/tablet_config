@@ -1,0 +1,32 @@
+* {
+  font-family: "Sans";
+  font-size: 22pt;
+  padding: 10px;
+  background-color: #1e1e2e;
+  color: #ffffff;
+}
+
+window {
+  margin: 80px;
+  border: 2px solid #44475a;
+  border-radius: 12px;
+  background-color: #1e1e2e;
+}
+
+#input {
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #2c2c3c;
+  color: #ffffff;
+}
+
+#entry {
+  padding: 10px;
+  margin: 6px 0;
+  border-radius: 8px;
+}
+
+#entry:selected {
+  background-color: #44475a;
+}
+

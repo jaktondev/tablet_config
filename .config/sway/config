@@ -1,0 +1,80 @@
+set $mod Mod4
+
+font pango:GohuFont 14 Nerd Font Mono 10
+
+exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ 50%
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86MonBrightnessUp exec brightnessctl set +10%
+bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
+bindsym Print exec flameshot gui
+
+
+
+floating_modifier $mod
+workspace_layout tabbed
+title_align center
+for_window [all] title_window_icon on
+
+bindsym $mod+d exec --no-startup-id wodi --show drun
+bindsym $mod+q kill
+bindgesture hold:2 exec --no-startup-id wofi --show drun
+bindgesture hold:4 kill
+bindgesture swipe:left focus left
+bindgesture swipe:right focus right
+bindgesture swipe:up exec "wvkbd-mobintl -L 200"
+bindgesture swipe:down exec "pkill -x wvkbd-mobintl"
+gaps inner 1px
+gaps outer 1px
+
+default_border pixel 3
+
+#                #Border        #BCK           #FG          #??      #WBorder
+client.focused   #e39aac        #634b7d        #f0f6e8      #28282e  #2ba9b4
+client.unfocused #634b7d        #634b7d        #777777      #999999  #2ba9b4
+client.urgent    #ff0000        #ffffff        #222222      #ffffff  #ff0000
+
+
+bindsym $mod+e exit
+bindsym $mod+r reload
+
+set $ws1 "1:[]"
+set $ws2 "2:[󰘊]"
+set $ws3 "3:[]"
+set $ws4 "4:[󰨞]"
+set $ws5 "5:[]"
+set $ws6 "6:[]"
+set $ws7 "7:[]"
+set $ws8 "8:[]"
+set $ws9 "9:[]"
+set $ws10 "10:[]"
+
+bindsym $mod+1 workspace number $ws1 
+bindsym $mod+2 workspace number $ws2 
+bindsym $mod+3 workspace number $ws3 
+bindsym $mod+4 workspace number $ws4 
+bindsym $mod+5 workspace number $ws5 
+bindsym $mod+6 workspace number $ws6 
+bindsym $mod+7 workspace number $ws7 
+bindsym $mod+8 workspace number $ws8 
+bindsym $mod+9 workspace number $ws9 
+bindsym $mod+0 workspace number $ws10
+
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+
+exec flameshot
+exec waybar -c ~/.config/waybar/config.json -s ~/.config/waybar/styles.css
+exec swaybg -i ~/Pictures/BCKK.png

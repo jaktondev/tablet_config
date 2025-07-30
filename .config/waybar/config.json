@@ -1,0 +1,45 @@
+{
+  "layer": "top",
+  "position": "top",
+  "modules-left": ["custom/wofi"],
+  "modules-center": [],
+  "modules-right": ["network", "battery", "pulseaudio", "clock"],
+
+  "custom/wofi": {
+    "format": "🔍",
+    "tooltip": "Launch Wofi",
+    "on-click": "wofi --show drun"
+  },
+
+  "custom/keyboard": {
+    "format": "⌨️",
+    "tooltip": "Launch wvkbd",
+    "on-click": "wvkbd"
+  },
+
+  "clock": {
+    "format": " {:%H:%M}",
+    "tooltip-format": " {:%A, %d %B %Y}",
+    "interval": 60
+  },
+
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-icons": ["", "", "", "", ""]
+  },
+
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-muted": " Muted",
+    "format-icons": {
+      "default": ["", ""]
+    }
+  },
+
+  "network": {
+    "format-wifi": " {essid}",
+    "format-ethernet": " {ipaddr}",
+    "format-disconnected": " Disconnected"
+  }
+}
+
